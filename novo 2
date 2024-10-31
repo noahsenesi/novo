@@ -1,0 +1,19 @@
+import random
+
+def get_random_quote():
+    with open("motivational_quotes.txt", "r") as file:
+        quotes = file.readlines()
+    return random.choice(quotes).strip()
+
+def main():
+    print("Seja bem-vindo ao Random Motivation Bot!")
+    while True:
+        input("\nPressione Enter para receber uma frase motivacional...")
+        print("\n💪 " + get_random_quote())
+        again = input("\nQuer outra frase? (s/n): ").lower()
+        if again != 's':
+            print("\nAté mais, continue motivado(a)!")
+            break
+
+if __name__ == "__main__":
+    main()
